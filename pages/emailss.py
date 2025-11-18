@@ -13,16 +13,16 @@ import os
 class EmailSender:
     def __init__(self):
         # Email configuration from Env
-        self.from_address = Env.EMAIL_FROM
-        self.to_address = Env.EMAIL_TO
-        self.subject = Env.EMAIL_SUBJECT
-        self.body = Env.EMAIL_BODY
-        self.screenshot_folder = r"C:\Kapil\Work\Coding\Pytest_Selenium\pages\screenshot"
+        self.from_address = ${{ secrets.EMAIL_FROM }}
+        self.to_address = ${{ secrets.EMAIL_TO }}
+        self.subject = ${{ secrets.EMAIL_SUBJECT }}
+        self.body = ${{ secrets.EMAIL_BODY }}
+        self.screenshot_folder = r"pages\screenshot"
 
         # SMTP server config (Gmail)
         self.smtp_server = "smtp.gmail.com"
         self.smtp_port = 587
-        self.smtp_password = "**********"  # App password
+        self.smtp_password = ${{ secrets.STM_PASSWORD }}  # App password
 
     def _attach_screenshot(self, msg):
         """
