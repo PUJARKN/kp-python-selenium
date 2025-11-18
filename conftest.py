@@ -21,9 +21,9 @@ def aws_credentials():
     Fixture to provide AWS credentials from environment variables.
     """
 
-    username = Env.AWS_USERNAME
-    password = Env.AWS_PASSWORD
-    account_id = Env.AWS_ACCOUNT_ID
+    username = ${{ secrets.AWS_USERNAME }}
+    password = ${{ secrets.AWS_PASSWORD }}
+    account_id = ${{ secrets.EMAIL_FROM }}
 
     if not username or not password:
         raise ValueError("AWS_USERNAME or AWS_PASSWORD not set in environment variables!")
