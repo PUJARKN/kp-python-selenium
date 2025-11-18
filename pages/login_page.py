@@ -24,9 +24,9 @@ class LoginPage:
         - or fallback to Env variables if `aws_credentials` is None
         """
         creds = aws_credentials or {
-            "username": Env.AWS_USERNAME,
-            "password": Env.AWS_PASSWORD,
-            "account_id": Env.AWS_ACCOUNT_ID
+            "username": ${{ secrets.AWS_USERNAME }},
+            "password": ${{ secrets.AWS_PASSWORD }},
+            "account_id": ${{ secrets.AWS_ACCOUNT_ID }}
         }
 
         username = creds.get("username")
