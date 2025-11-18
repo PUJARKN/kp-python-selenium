@@ -22,7 +22,7 @@ class EmailSender:
         # SMTP server config (Gmail)
         self.smtp_server = "smtp.gmail.com"
         self.smtp_port = 587
-        self.smtp_password = "ykqt tcbi qlbi xevp"  # App password
+        self.smtp_password = "**********"  # App password
 
     def _attach_screenshot(self, msg):
         """

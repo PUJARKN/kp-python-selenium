@@ -13,9 +13,9 @@ log = logger.get_logger()
 @pytest.mark.parametrize(
     "iam_username, account_id, aws_password, expect_success",
     [
-        ("aws-kapiyl-1993", "kapfgil", "K@pisdl007", False),
-        ("kapil", "aws-kapil-1993", "K@pil007", True),
-        ("abcd", "xyz", "dummy123", False),
+        ("*****", "*****", "*********", False),
+        ("*****", "*****", "*****", True),
+        ("*****", "*****", "*****", False),
     ]
 )
 def test_login(driver, iam_username, account_id, aws_password, expect_success):
