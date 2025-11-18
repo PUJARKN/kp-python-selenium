@@ -1,7 +1,4 @@
 name: Pytest Selenium CI
-uses: actions/setup-python@v4
-  with:
-    python-version: 3.11
 
 on:
   push:
@@ -19,22 +16,30 @@ jobs:
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
       EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      EMAIL_SUBJECT: ${{ secrets.EMAIL_SUBJECT }}
+      EMAIL_BODY: ${{ secrets.EMAIL_BODY }}
 
     steps:
-      - name: Checkout code
+      # 1️⃣ Checkout the repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      # 2️⃣ Set up Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytesseract pillow selenium chromedriver_autoinstaller
+          pip install pytest selenium pillow pytesseract chromedriver_autoinstaller
 
+      # 4️⃣ Run Pytest tests
       - name: Run tests
         run: |
-          pytest -vs
+          python -m pytest -vs --html=report.html --self-contained-html
+
+      # 5️⃣ Optionally upload HTML repo
