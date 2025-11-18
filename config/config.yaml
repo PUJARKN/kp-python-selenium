@@ -1,0 +1,4 @@
+aws:
+  username: IAMUSERNAME
+  aws_id: AWSID
+  aws_password: AWSPSW

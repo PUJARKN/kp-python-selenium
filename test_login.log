@@ -1,0 +1,6 @@
+2025-11-18 14:43:09,093 [INFO] Logging in with IAM user: kapil
+2025-11-18 14:43:13,361 [INFO] Waiting for Console Home heading to appear...
+2025-11-18 14:43:21,867 [INFO] Console Home found — login successful.
+2025-11-18 14:43:21,867 [INFO] Validating BCM Page...
+2025-11-18 14:43:21,868 [INFO] Entering BCM text: Billing and Cost Management
+2025-11-18 14:43:35,831 [INFO] BCM search performed successfully.

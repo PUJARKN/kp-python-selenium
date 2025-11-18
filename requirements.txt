@@ -1,0 +1,8 @@
+selenium
+pytest
+pytest-html
+chromedriver-autoinstaller
+pytesseract
+PIL
+pytest-xdist
+python-dotenv
