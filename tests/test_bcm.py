@@ -3,13 +3,13 @@ from pages.Billing_Cost_Management import BCMPage
 from Utilities.config import BASE_URL
 import os
 
-# Read environment variables if parameters not passed
-# iam_username = "kapil"
-# account_id = "aws-kapil-1993"
-# aws_password = "K@pil007"
+Read environment variables if parameters not passed
+iam_username = "kapil"
+account_id = "aws-kapil-1993"
+aws_password = "K@pil007"
 
 
-def test_bcm_module(driver,aws_credentials):
+def test_bcm_module(driver,iam_username,account_id,aws_password):
     driver.get(BASE_URL)
 
     # Step 1: Login
