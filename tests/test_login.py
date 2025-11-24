@@ -13,7 +13,7 @@ log = logger.get_logger()
 @pytest.mark.parametrize(
     "iam_username, account_id, aws_password, expect_success",
     [
-        ("kapil", "wiruh", "sfjksh" False),
+        ("kapil", "wiruh", "sfjksh", False),
         ("2wryg", "**sf77e*", "**yj*", False),
         ("*****", "*****", "*****", False),
     ]
