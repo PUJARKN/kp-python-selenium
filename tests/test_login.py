@@ -30,9 +30,6 @@ def test_login(driver, iam_username, account_id, aws_password, expect_success):
 
     # Create page object instance
     page = LoginPage(driver)
-    iam_username = os.getenv("AWS_USERNAME")
-    aws_password  = os.getenv("AWS_PASSWORD")
-    account_id = os.getenv("AWS_ACCOUNT_ID")
     
     # Build credentials dict (required by login_credential)
     credentials = {
