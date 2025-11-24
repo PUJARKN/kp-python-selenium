@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from Utilities.helper import take_screenshot
 from Utilities import logger
 from Utilities.env_loader import Env
+import os
 
 log = logger.get_logger()
 
