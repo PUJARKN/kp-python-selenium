@@ -36,6 +36,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install python-dotenv
+          pip install pytest-html
           pip install pytest selenium pillow pytesseract chromedriver_autoinstaller
           
       - name: Show requirements.txt
