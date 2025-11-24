@@ -4,7 +4,7 @@ import glob
 import pytesseract
 from PIL import Image
 
-folder_path = r'C:\Kapil\Work\Coding\Pytest_Selenium\pages\screenshot'
+folder_path = r'pages\screenshot'
 
 
 def take_screenshot(driver, name):
