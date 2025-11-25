@@ -2,13 +2,10 @@ from pages.login_page import LoginPage
 from pages.Billing_Cost_Management import BCMPage
 from Utilities.config import BASE_URL
 import os
-
-#Read environment variables if parameters not passed
-iam_username = "kapil"
-account_id = "aws-kapil-1993"
-aws_password = "K@pil007"
+import pytest
 
 
+@pytest.mark.skip("Not implementest yet on git hub")
 def test_bcm_module(driver,iam_username,account_id,aws_password):
     driver.get(BASE_URL)
 
