@@ -23,12 +23,27 @@ cred = {
 
 
 @pytest.mark.parametrize(
+    # 1️⃣ List of test function parameters
+    # These are the arguments your test function will receive for each run
     "iam_username, account_id, aws_password, expect_success",
+
+    # 2️⃣ List of test cases (tuples)
+    # Each tuple corresponds to **one test run** with these values
     [
-        (cred["myUsername"], cred["myAWSAccount"],cred["myPassword"],True),
+        # First test case: use credentials from your `cred` dictionary (likely from .env)
+        (cred["myUsername"], cred["myAWSAccount"], cred["myPassword"], True),
+
+        # Second test case: invalid credentials
         ("ROb", "FishLand", "25pomo", False),
-        ("Ned", "Winterfell", "892da", False),
-    ]
+
+        # Third test case: another invalid login attempt
+        ("Ned", "Winter", "892da", False),
+
+    ],
+    # 3️⃣ Custom test IDs
+    # Instead of pytest printing parameter values (which may be sensitive),
+    # each test run is shown with a friendly name in the console and reports
+    ids=["login_test_kapil", "login_test_rob", "login_test_ned"]
 )
 def test_login(driver, iam_username, account_id, aws_password, expect_success):
     """

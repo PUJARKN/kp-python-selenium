@@ -1,10 +1,26 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Env
+venv/
 .env
-venv
-__pycache__
-.dist
-.idea
-tests\__pycache__
-Utilities/__pycache__
-pages\__pycache__
-.pytest_cashe
-config\__pycache__
+
+# Pytest
+.pytest_cache/
+
+# Build / Dist
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+
+# Reports / Logs
+report.html
+*.log
