@@ -4,6 +4,9 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+Utilities\__pycache__
+tests\__pycache__
+pages\__pycache__
 
 # Env
 venv/
