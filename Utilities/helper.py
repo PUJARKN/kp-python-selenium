@@ -3,6 +3,7 @@ import time
 import glob
 import pytesseract
 from PIL import Image
+import shutil
 
 folder_path = r'pages\screenshot'
 
@@ -45,3 +46,11 @@ def get_latest_billing_screenshot(folder_path):
     latest_file = max(billing_files, key=os.path.getmtime)
     print(f"✔ Latest screenshot found: {latest_file}")
     return latest_file
+
+
+def delete_folder(folder_path):
+    if os.path.exists(folder_path) and os.path.isdir(folder_path):
+        shutil.rmtree(folder_path)
+        print(f"Folder '{folder_path}' deleted successfully.")
+    else:
+        print(f"Folder '{folder_path}' does not exist.")
