@@ -6,16 +6,28 @@ from Utilities.helper import take_screenshot
 from pages.login_page import LoginPage
 from Utilities.config import BASE_URL
 from Utilities import logger
+import os
+from dotenv import load_dotenv
 
 log = logger.get_logger()
+
+# Load the .env file
+load_dotenv()
+
+# Access environment variables
+cred = {
+    "myUsername": os.getenv("AWS_USERNAME"),
+    "myPassword": os.getenv("AWS_PASSWORD"),
+    "myAWSAccount": os.getenv("AWS_ACCOUNT_ID")
+}
 
 
 @pytest.mark.parametrize(
     "iam_username, account_id, aws_password, expect_success",
     [
-        ("kapil", "wiruh", "sfjksh", False),
-        ("2wryg", "**sf77e*", "**yj*", False),
-        ("*****", "*****", "*****", False),
+        (cred["myUsername"], cred["myAWSAccount"],cred["myPassword"],True),
+        ("ROb", "FishLand", "25pomo", False),
+        ("Ned", "Winterfell", "892da", False),
     ]
 )
 def test_login(driver, iam_username, account_id, aws_password, expect_success):
@@ -30,7 +42,7 @@ def test_login(driver, iam_username, account_id, aws_password, expect_success):
 
     # Create page object instance
     page = LoginPage(driver)
-    
+
     # Build credentials dict (required by login_credential)
     credentials = {
         "username": iam_username,

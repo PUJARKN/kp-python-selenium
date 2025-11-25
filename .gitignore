@@ -1,1 +1,10 @@
 .env
+venv
+__pycache__
+.dist
+.idea
+tests/__pycache__
+Utilities/__pycache__
+pages/__pycache__
+.pytest_cashe
+config/__pycache__
