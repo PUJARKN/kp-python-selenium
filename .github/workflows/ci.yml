@@ -43,7 +43,7 @@ jobs:
         run: cat requirements.txt
 
       # 4️⃣ Run Pytest tests
-      - name: Run tests
+      - name: Run pytest tests
         run: |
           python -m pytest -vs --html=report.html --self-contained-html
 
