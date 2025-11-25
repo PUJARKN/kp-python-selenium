@@ -5,8 +5,8 @@ import os
 import pytest
 
 
-@pytest.mark.skip("Not implementest yet on git hub")
-def test_bcm_module(driver,iam_username,account_id,aws_password):
+# @pytest.mark.skip("Not implemented yet on git hub")
+def test_bcm_module(driver,):
     driver.get(BASE_URL)
 
     # Step 1: Login
@@ -20,4 +20,3 @@ def test_bcm_module(driver,iam_username,account_id,aws_password):
 
     bcm.validate_bcm_page_loaded()
     bcm.search_bcm("Billing and Cost Management", screenshot_name="bcm_page")
-

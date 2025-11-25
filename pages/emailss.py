@@ -6,23 +6,24 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 from Utilities.helper import get_latest_billing_screenshot
-from Utilities.env_loader import Env
+from dotenv import load_dotenv
 import os
-
+# Load the .env file
+load_dotenv()
 
 class EmailSender:
     def __init__(self):
         # Email configuration from Env
-        self.from_address = ${{ secrets.EMAIL_FROM }}
-        self.to_address = ${{ secrets.EMAIL_TO }}
-        self.subject = ${{ secrets.EMAIL_SUBJECT }}
-        self.body = ${{ secrets.EMAIL_BODY }}
+        self.from_address = os.getenv("EMAIL_FROM")
+        self.to_address = os.getenv("EMAIL_TO")
+        self.subject = os.getenv("EMAIL_SUBJECT")
+        self.body = os.getenv("EMAIL_BODY")
         self.screenshot_folder = r"pages\screenshot"
 
         # SMTP server config (Gmail)
         self.smtp_server = "smtp.gmail.com"
         self.smtp_port = 587
-        self.smtp_password = ${{ secrets.STM_PASSWORD }}  # App password
+        self.smtp_password = os.getenv("EMAIL_STM_PASSWORD") # App password
 
     def _attach_screenshot(self, msg):
         """

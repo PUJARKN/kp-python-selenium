@@ -3,7 +3,8 @@ from selenium import webdriver
 import chromedriver_autoinstaller
 import os
 from selenium.webdriver.chrome.options import Options
-from Utilities.env_loader import Env
+
+# from Utilities.env_loader import Env
 
 # Suppress TensorFlow and other library logs (if used)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # suppress TF INFO/WARNING
